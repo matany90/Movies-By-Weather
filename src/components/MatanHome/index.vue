@@ -40,8 +40,12 @@
       </div>
     </div>
 
+    <!-- set loader -->
+    <div v-if="loading" class="flex justify-center mt-20" style="height: 600px">
+    <m-loading size="large" />
+    </div>
     <!-- render movies/tv shows -->
-    <div class="flex flex-wrap justify-center md:container md:mx-auto">
+    <div v-else class="flex flex-wrap justify-center md:container md:mx-auto">
       <div
         v-for="(omdbEl, i) in formattedOmdbElements"
         :key="i"
@@ -81,6 +85,12 @@ export default {
     currentPage: {
       type: Number,
       default: () => 1
+    },
+
+    // loading flag
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
 

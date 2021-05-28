@@ -37,6 +37,7 @@
     <matan-home
       :random-movies="randomMovies"
       :search-movies="searchMovies"
+      :loading="loading"
       :total-search-results="totalSearchResults"
       :current-page="search.page"
       @on-next-page="onNextPage"
@@ -81,6 +82,9 @@ export default {
 
       // define total search api results
       totalSearchResults: 0,
+
+      // set loader
+      loading: false,
 
       // define header options
       headerOptions: [
@@ -147,6 +151,9 @@ export default {
      * onSearchClick emits search to omdb API
      */
     async onSearchClick() {
+      // set loader
+      this.loading = true
+
       // make api search
       const { data } = await obdbClient.search(
         {
@@ -159,6 +166,7 @@ export default {
       // set movies data
       this.searchMovies = data.Search
       this.totalSearchResults = Number(data.totalResults)
+      this.loading = false
     },
 
     /**
