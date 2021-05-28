@@ -6,8 +6,24 @@
       :header-options="headerOptions"
     />
 
+    <!-- Search bar - Mobile view only -->
+    <div class="block md:hidden">
+
+      <!-- image mobile container -->
+      <div class="flex justify-center">
+        <img src="@/assets/images/popcorn.svg" class="w-32 mb-6 mt-5" />
+      </div>
+
+      <!-- search bar mobile -->
+      <matan-search-bar
+        :search="search"
+        @on-search="onSearchClick"
+        class="md:ml-20 md:mr-20 ml-10 mr-10"
+      />
+    </div>
+
     <!-- Background logo -->
-    <div class="background-logo">
+    <div class="background-logo md:block hidden">
 
       <!-- Background content -->
       <div class="background-logo-content flex flex-row">

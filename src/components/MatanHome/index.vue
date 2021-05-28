@@ -3,14 +3,14 @@
     <!-- Random/Search movies -->
     <div class="matan-home-elements">
       <!-- Title -->
-      <div class="matan-home-elements--title text-center text-4xl mt-20 ml-10 mr-10">
+      <div class="matan-home-elements--title text-center text-4xl md:mt-20 mt-10 ml-10 mr-10">
         {{ $t(`home.${this.moviesKey}.title`) }}
       </div>
 
       <!-- Info Container -->
       <div class="flex flex-row w-full justify-center">
         <!-- Prev page icon -->
-        <div class="w-1/4 flex justify-center">
+        <div class="w-1/4 flex justify-center content-start items-end md:items-start">
           <m-icon
             v-if="isPrevIconVisible"
             name="left-arrow"
@@ -22,13 +22,13 @@
         <!-- Info text -->
         <div class="w-1/2">
           <div
-            class="matan-home-elements--info mt-10 text-center w-full"
+            class="matan-home-elements--info mt-10 text-center w-full hidden md:block"
             v-html="$t(`home.${this.moviesKey}.info`)"
           />
         </div>
 
         <!-- Next page icon -->
-        <div class="w-1/4 flex justify-center">
+        <div class="w-1/4 flex justify-center content-start items-end md:items-start">
           <m-icon
             v-if="isNextIconVisible"
             name="right-arrow"
@@ -45,7 +45,7 @@
     <m-loading size="large" />
     </div>
     <!-- render movies/tv shows -->
-    <div v-else class="flex flex-wrap justify-center md:container md:mx-auto">
+    <div v-else class="flex flex-wrap justify-center md:container md:mx-auto mt-10 md:mt-20">
       <div
         v-for="(omdbEl, i) in formattedOmdbElements"
         :key="i"

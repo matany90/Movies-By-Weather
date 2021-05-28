@@ -1,6 +1,6 @@
 <template>
   <!-- Card container -->
-  <div class="matan-movie-card flex flex-col justify-center items-center my-8">
+  <div class="matan-movie-card flex flex-col justify-center items-center">
 
     <!-- Background image -->
     <div
