@@ -10,27 +10,33 @@
       <!-- Info Container -->
       <div class="flex flex-row w-full justify-center">
         <!-- Prev page icon -->
-        <m-icon
-        v-if="isPrevIconVisible"
-        name="left-arrow"
-        type="button"
-        class="ml-2"
-        @click="$emit('on-prev-page')"
-      />
+        <div class="w-1/4 flex justify-center">
+          <m-icon
+            v-if="isPrevIconVisible"
+            name="left-arrow"
+            type="button"
+            class="ml-2"
+            @click="$emit('on-prev-page')"
+          />
+        </div>
         <!-- Info text -->
-        <div
-          class="matan-home-elements--info mt-10 text-center ml-5 mr-5 md:ml-5 md:ml-5"
-          v-html="$t(`home.${this.moviesKey}.info`)"
-        />
+        <div class="w-1/2">
+          <div
+            class="matan-home-elements--info mt-10 text-center w-full"
+            v-html="$t(`home.${this.moviesKey}.info`)"
+          />
+        </div>
 
         <!-- Next page icon -->
-        <m-icon
-        v-if="isNextIconVisible"
-        name="right-arrow"
-        type="button"
-        class="mr-2"
-        @click="$emit('on-next-page')"
-      />
+        <div class="w-1/4 flex justify-center">
+          <m-icon
+            v-if="isNextIconVisible"
+            name="right-arrow"
+            type="button"
+            class="mr-2"
+            @click="$emit('on-next-page')"
+          />
+        </div>
       </div>
     </div>
 
