@@ -16,5 +16,9 @@ export const OMDB_RANDOM_SEARCH = {
   year: "2021",
   series: "series",
   movie: "movie",
-  searchWords: ["family", "action"]
+  searchWords: ["family", "action", "true", "friends", "comedy", "sport"]
 }
+
+
+// no image url
+export const NO_IMAGE_URL = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png"
