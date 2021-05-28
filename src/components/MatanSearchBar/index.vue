@@ -12,6 +12,7 @@
             <!-- Input -->
             <input
               v-model="search.input"
+              @change="resetPaging"
               class="w-full pl-4 text-sm outline-none focus:outline-none bg-transparent text-black"
               type="search"
               placeholder="search for images"
@@ -49,7 +50,18 @@ export default {
      * set value for select
      */
     onSelectChange(e) {
+      // set select value
       this.search.select.value = e.target.value
+
+      // reset paging
+      this.resetPaging()
+    },
+
+    /**
+     * resetPaging reset pagination
+     */
+    resetPaging() {
+      this.search.page = 1
     }
   }
 }

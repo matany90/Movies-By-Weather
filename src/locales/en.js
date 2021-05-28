@@ -15,6 +15,9 @@ export const en = {
     search: {
       title: "It's your time to enjoy!",
       info: "We have found some movies and series according to your search."
+    },
+    card: {
+      moreInfo: "More Info"
     }
   },
   movies: {
