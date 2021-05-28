@@ -1,16 +1,26 @@
 <template>
   <!-- Details container -->
-  <div class="matan-details md:container md:mx-auto flex flex-row mt-10">
+  <div class="matan-details md:container md:mx-auto flex md:flex-row flex-col mt-10">
 
     <!-- Image -->
-    <div class="w-1/3">
+    <div class="md:w-1/3 md:p-0 p-3">
       <div class="flex justify-center">
-        <img :src="imageUrl" class="rounded" />
+        <div class="flex flex-col">
+          <img :src="imageUrl" class="rounded" />
+          <star-rating
+            v-if="movie.imdbRating !== 'N/A'"
+            :max-rating="5"
+            :rating="Number(movie.imdbRating / 2)"
+            :show-rating="false"
+            :read-only="true"
+            class="flex justify-center mt-4"
+          />
+        </div>
       </div>
     </div>
 
     <!-- Details -->
-    <div class="w-2/3 divide-y divide-red-900">
+    <div class="md:w-2/3 divide-y divide-red-900 md:p-0 p-5">
       <div class="mb-4">
         <!-- Title -->
         <div class="matan-details--title">{{ movie.Title }}</div>
@@ -48,13 +58,14 @@
 
       <!-- Description -->
       <div>
-        <div class="mt-5 matan-details--plot">{{ movie.Plot }}</div>
+        <div class="mt-5 matan-details--plot">{{ movieDescription }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import StarRating from 'vue-star-rating'
 import initOmdbAPI from "../api/omdb"
 import { NO_IMAGE_URL } from "../configs"
 
@@ -62,6 +73,9 @@ import { NO_IMAGE_URL } from "../configs"
 const omdbClient = initOmdbAPI()
 
 export default {
+  components: {
+    StarRating
+  },
   // local state
   data() {
     return {
@@ -102,6 +116,13 @@ export default {
      */
     movieYear() {
       return this.movie?.Released.replace("-", "")
+    },
+
+    /**
+     * Returns movie description
+     */
+    movieDescription() {
+      return this.movie.Plot !== "N/A" ? this.movie.Plot : this.$t("general.noDescription")
     }
   }
 }

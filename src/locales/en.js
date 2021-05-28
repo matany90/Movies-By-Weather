@@ -24,5 +24,8 @@ export const en = {
     rating: "Rating",
     actors: "Actors",
     genre: "Genre"
+  },
+  general: {
+    noDescription: "No Description Provided"
   }
 }
