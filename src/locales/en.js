@@ -20,10 +20,9 @@ export const en = {
       moreInfo: "More Info"
     }
   },
-  movies: {
-
-  },
-  tvShows: {
-
+  details: {
+    rating: "Rating",
+    actors: "Actors",
+    genre: "Genre"
   }
 }

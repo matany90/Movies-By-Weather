@@ -21,10 +21,34 @@
 
       <!-- Additinal Info -->
       <div>
-        <div v-if="movie.imdbRating">
-          <span class="text-sm text-gray-600 font-extrabold">Rating:</span>
+        <!-- Genre -->
+        <div v-if="movie.Genre" class="mt-5">
+          <span class="text-sm text-gray-600 font-extrabold">
+            {{ $t("details.genre") }}
+          </span>
+          <span class="text-sm font-extrabold">{{ movie.Genre }}</span>
+        </div>
+
+        <!-- Rating -->
+        <div v-if="movie.imdbRating" class="mt-5">
+          <span class="text-sm text-gray-600 font-extrabold">
+            {{ $t("details.rating") }}
+          </span>
           <span class="text-sm font-extrabold">{{ movie.imdbRating }}</span>
         </div>
+
+        <!-- Actors -->
+        <div v-if="movie.Actors" class="mt-5 mb-5">
+          <span class="text-sm text-gray-600 font-extrabold">
+            {{ $t("details.actors") }}
+          </span>
+          <span class="text-sm font-extrabold">{{ movie.Actors }}</span>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div>
+        <div class="mt-5 matan-details--plot">{{ movie.Plot }}</div>
       </div>
     </div>
   </div>
@@ -91,6 +115,12 @@ export default {
     font-family: $details-title-font-family;
     font-weight: $details-title-font-weight;
     font-size: $details-title-font-size;
+  }
+
+  &--plot {
+    font-family: $details-plot-font-family;
+    font-weight: $details-plot-font-weight;
+    font-size: $details-plot-font-size;
   }
 }
 </style>
