@@ -1,7 +1,8 @@
 // define movies configs
 export const OMDB_CONFIGS = {
   apikey: "dce24c91",
-  baseURL: "http://www.omdbapi.com"
+  baseURL: "http://www.omdbapi.com",
+  apiLimit: 10
 }
 
 // define weather configs

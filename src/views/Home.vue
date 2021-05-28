@@ -8,10 +8,27 @@
 
     <!-- Background logo -->
     <div class="background-logo">
+
+      <!-- Background content -->
       <div class="background-logo-content flex flex-row">
+
         <div class="w-1/2" />
+
         <div class="w-1/2 text-center mt-40 p-5">
-          {{ $t("home.title") }}
+          <!-- Background title -->
+          <div>{{ $t("home.title") }}</div>
+
+          <!-- Background info -->
+          <div class="background-logo--subtitle">
+            {{ $t("home.subtitle") }}
+          </div>
+
+          <!-- Search bar -->
+          <matan-search-bar
+            :search="search"
+            @on-search="onSearchClick"
+            class="ml-20 mr-20"
+          />
         </div>
       </div>
     </div>
@@ -20,6 +37,10 @@
     <matan-home
       :random-movies="randomMovies"
       :search-movies="searchMovies"
+      :total-search-results="totalSearchResults"
+      :current-page="search.page"
+      @on-next-page="onNextPage"
+      @on-prev-page="onPrevPage"
     />
 
   </div>
@@ -39,11 +60,27 @@ export default {
       // selected header
       selectedHeader: "home",
 
+      // search input
+      search: {
+        input: "",
+        page: 1,
+        select: {
+          value: "movie",
+          options: [
+            { display: "Movies", value: "movie" },
+            { display: "Tv Shows", value: "series" }
+          ]
+        }
+      },
+
       // define random movies
       randomMovies: [],
 
       // define movies/tvshows by search
       searchMovies: [],
+
+      // define total search api results
+      totalSearchResults: 0,
 
       // define header options
       headerOptions: [
@@ -104,15 +141,44 @@ export default {
       const responses = (await Promise.all([mvPr, srPr])).flat()
       const randomMovies = (responses.map(res => res.data.Search)).flat()
       return randomMovies.sort(() => 0.5 - Math.random()).slice(0, numberOfMovies)
+    },
 
-      // // and pull data by id
-      // return Promise.all(
-      //   shuffled
-      //     .map(async omdbEl => {
-      //       const { data = {} } = await obdbClient.get(omdbEl.imdbID)
-      //       return data
-      //     })
-      // )
+    /**
+     * onSearchClick emits search to omdb API
+     */
+    async onSearchClick() {
+      // make api search
+      const { data } = await obdbClient.search(
+        {
+          s: this.search.input,
+          type: this.search.select.value,
+          page: this.search.page
+        }
+      )
+
+      // set movies data
+      this.searchMovies = data.Search
+      this.totalSearchResults = Number(data.totalResults)
+    },
+
+    /**
+     * onNextPage handle next page
+     * on search request
+     */
+    async onNextPage() {
+      this.search.page += 1
+
+      await this.onSearchClick()
+    },
+
+    /**
+     * onPrevPage handle prev page
+     * on search request
+     */
+    async onPrevPage() {
+      this.search.page -= 1
+
+      await this.onSearchClick()
     }
   },
 
@@ -145,6 +211,12 @@ export default {
 
   &-content {
     height: 45rem;
+  }
+
+  &--subtitle {
+    font-family: $root-font-family;
+    font-weight: 500;
+    font-size: $root-font-size;
   }
 }
 

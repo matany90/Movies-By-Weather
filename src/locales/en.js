@@ -2,6 +2,7 @@
 export const en = {
   home: {
     title: "Welcome to Matan's Movies World!",
+    subtitle: "Search for movies or Tv Shows",
     header: {
       home: "Latest",
       movies: "Movies",
