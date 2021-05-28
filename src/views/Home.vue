@@ -138,11 +138,15 @@ export default {
      * @param {number} numberOfMovies - number of random movies
      */
     async collectRandomMovies(numberOfMovies) {
+      // generate random search keys
+      const firstRandomKey = this.pickRandomKey()
+      const secondRandomKey = this.pickRandomKey()
+
       // pull random 10 movies from 2021
       const mvPr = obdbClient.search(
         {
           y: OMDB_RANDOM_SEARCH.year,
-          s: this.pickRandomKey,
+          s: firstRandomKey,
           type: OMDB_RANDOM_SEARCH.movies
         }
       )
@@ -151,7 +155,7 @@ export default {
       const srPr = obdbClient.search(
         {
           y: OMDB_RANDOM_SEARCH.year,
-          s: this.pickRandomKey,
+          s: secondRandomKey,
           type: OMDB_RANDOM_SEARCH.series
         }
       )
@@ -203,11 +207,8 @@ export default {
       this.search.page -= 1
 
       await this.onSearchClick()
-    }
-  },
+    },
 
-  // computed properties
-  computed: {
     /**
      * pick random key search for latest
      * movies/tvshows

@@ -22,7 +22,7 @@
         <!-- Info text -->
         <div class="w-1/2">
           <div
-            class="matan-home-elements--info mt-10 text-center w-full hidden md:block"
+            class="matan-home-elements--info mt-10 text-center w-full"
             v-html="$t(`home.${this.moviesKey}.info`)"
           />
         </div>
