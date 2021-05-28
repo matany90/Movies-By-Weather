@@ -9,3 +9,11 @@ export const OPEN_WEATHER_CONFIGS = {
   apikey: "c2152ce33eec94f628bcb40cda3da446",
   baseURL: "http://api.openweathermap.org/data/2.5/weather"
 }
+
+// define omdb random search props
+export const OMDB_RANDOM_SEARCH = {
+  year: "2021",
+  series: "series",
+  movie: "movie",
+  searchWords: ["family", "action"]
+}

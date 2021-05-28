@@ -33,15 +33,20 @@ export default class OmdbAPI {
    * @param {object} headers - additional headers
    * @returns {Promise.<*>} returns promise of odmb elements
    */
-  search(params = {}, headers = {}) {
-    // define request configs
-    const configs = {
-      params,
-      headers
-    }
+  async search(params = {}, headers = {}) {
+    try {
+      // define request configs
+      const configs = {
+        params,
+        headers
+      }
 
-    // pull omdb elements
-    return this.client.get("/", configs)
+      // pull omdb elements
+      return this.client.get("/", configs)
+    } catch (e) {
+      console.error(e)
+      throw new Error("unable to search movies/tv shows.")
+    }
   }
 
   /**
@@ -52,15 +57,20 @@ export default class OmdbAPI {
    * @returns {Promise.<object>} - promise for the relevant object
    */
   get(id, headers = {}) {
-    // define request configs
-    const configs = {
-      headers,
-      params: {
-        i: id
-      },
-    }
+    try {
+      // define request configs
+      const configs = {
+        headers,
+        params: {
+          i: id
+        },
+      }
 
-    // pull omdb element
-    return this.client.get("/", configs)
+      // pull omdb element
+      return this.client.get("/", configs)
+    } catch (e) {
+      console.error(e)
+      throw new Error("unable to get movie/tv-show.")
+    }
   }
 }
