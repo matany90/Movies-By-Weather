@@ -1,11 +1,5 @@
 <template>
   <div>
-    <!-- Header -->
-    <matan-header
-      :selectedHeader="selectedHeader"
-      :header-options="headerOptions"
-    />
-
     <!-- Search bar - Mobile view only -->
     <div class="block md:hidden">
 
@@ -74,9 +68,6 @@ export default {
   // local state
   data() {
     return {
-      // selected header
-      selectedHeader: "home",
-
       // search input
       search: {
         input: "",
@@ -100,26 +91,7 @@ export default {
       totalSearchResults: 0,
 
       // set loader
-      loading: false,
-
-      // define header options
-      headerOptions: [
-        {
-          id: "home",
-          label: this.$t("home.header.home"),
-          cb: () => this.selectedHeader = "home"
-        },
-        {
-          id: "movies",
-          label: this.$t("home.header.movies"),
-          cb: () => this.selectedHeader = "movies"
-        },
-        {
-          id: "tv-shows",
-          label: this.$t("home.header.tvShows"),
-          cb: () => this.selectedHeader = "tv-shows"
-        }
-      ]
+      loading: false
     }
   },
 

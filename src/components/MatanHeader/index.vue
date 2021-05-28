@@ -9,7 +9,6 @@
             <!-- Render Header label -->
             <div
               :class="headersClasses(header.id)"
-              @click="header.cb"
             >
               {{ header.label }}
             </div>

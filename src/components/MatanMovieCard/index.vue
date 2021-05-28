@@ -1,6 +1,9 @@
 <template>
   <!-- Card container -->
-  <div class="matan-movie-card flex flex-col justify-center items-center cursor-pointer">
+  <div
+    class="matan-movie-card flex flex-col justify-center items-center cursor-pointer"
+    @click="onCardClick"
+  >
 
     <!-- Background image -->
     <div
@@ -46,6 +49,16 @@ export default {
     imageUrl() {
       return this.movie.Poster !== "N/A" ? this.movie.Poster : NO_IMAGE_URL
     }
+  },
+
+  // methods
+  methods: {
+    /**
+     * onCardClick push to details page
+     */
+    onCardClick() {
+      this.$router.push(`/details/${this.movie.imdbID}`)
+    }
   }
 }
 </script>
@@ -56,8 +69,6 @@ export default {
 .matan-movie-card {
   &--title {
     font-family: $card-title-font-family;
-    $card-title-font-weight: $card-title-font-weight;
-    $card-title-font-size: $card-title-font-size;
   }
 }
 </style>
