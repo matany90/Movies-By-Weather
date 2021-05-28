@@ -28,7 +28,7 @@ body {
 }
 
 body {
-  background: map-deep-get($matan-colors, "white");
+  background: map-deep-get($matan-colors, "black", "dark");
 }
 
 .m-app {
@@ -40,18 +40,6 @@ body {
   line-height: $root-line-height;
   height: 100%;
   width: 100%;
-
-  .primary {
-    &--text {
-      color: map-deep-get($matan-colors, "primary");
-    }
-  }
-
-  .secondary {
-    &--text {
-      color: map-deep-get($matan-colors, "secondary");
-    }
-  }
 }
 </style>
 
