@@ -68,8 +68,12 @@ export default {
     /**
      * Execute search operation
      */
-     executeSearch() {
-       this.$emit("on-search")
+    executeSearch() {
+      // should scroll
+      const shouldScroll = true
+
+      // execute search
+      this.$emit("on-search", shouldScroll)
      }
 
   }

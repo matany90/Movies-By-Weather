@@ -1,5 +1,6 @@
 import Vue from "vue"
 import VueI18n from "vue-i18n"
+import VueScrollTo from "vue-scrollto"
 
 import App from "./App.vue"
 import router from "./router"
@@ -14,6 +15,7 @@ import "./assets/tailwind.css"
 // install internal plugins
 Vue.use(common)
 Vue.use(components)
+Vue.use(VueScrollTo)
 
 // install il18
 Vue.use(VueI18n)

@@ -45,6 +45,7 @@
 
     <!-- Render movies -->
     <matan-home
+      id="home-list"
       :random-movies="randomMovies"
       :search-movies="searchMovies"
       :loading="loading"
@@ -141,7 +142,7 @@ export default {
     /**
      * onSearchClick emits search to omdb API
      */
-    async onSearchClick() {
+    async onSearchClick(shouldScroll = false) {
       // set loader
       this.loading = true
 
@@ -155,6 +156,10 @@ export default {
       )
 
       // set movies data
+      if (shouldScroll) {
+        this.$scrollTo("#home-list")
+      }
+
       this.searchMovies = data.Search
       this.totalSearchResults = Number(data.totalResults)
       this.loading = false
