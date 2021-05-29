@@ -47,7 +47,7 @@ npm run serve
 
 ![alt text](https://imgur.com/18SjgWN.png)
 
-![alt text](https://imgur.com/HQlfjAt.png)
+![alt text](https://imgur.com/qdAXLS5.png)
 
 ![alt text](https://imgur.com/lNEML3l.png)
 
