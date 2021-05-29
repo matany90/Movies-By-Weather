@@ -76,7 +76,7 @@ export default {
 
     // change icon's color on parent hover
     &:hover > .m-icon--button--svg {
-      filter: none;
+      filter: brightness(0.1);
     }
   }
 }
