@@ -29,7 +29,7 @@ To run the project locally, please run:
 
 ```shell
 # clone repo
-cd $HOME
+cd $YOUR_LOCAL_PATH
 git clone https://github.com/matany90/Movies-By-Weather.git
 
 # install dependencies
