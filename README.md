@@ -43,7 +43,7 @@ npm run serve
 ```
 
 ## App Screenshots
-![alt text](https://imgur.com/eEDc1Yr.png)
+![alt text](https://i.ibb.co/M1SqL6n/Screen-Shot-2021-05-29-at-20-32-08.png)
 
 ![alt text](https://imgur.com/18SjgWN.png)
 
