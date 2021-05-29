@@ -1,5 +1,8 @@
 # Welcome to Matan's Movies World
 
+<img src="https://imgur.com/Io9QY36.png" width="600">
+<img src="https://imgur.com/Io9QY36.png" width="600">
+
 ## Web application I developed using Vue.js Framework
 
 In Matan's World you can search for movies and series, get information about them and even watch the weather forecast in your area.
