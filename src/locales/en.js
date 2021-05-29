@@ -18,6 +18,9 @@ export const en = {
     },
     card: {
       moreInfo: "More Info"
+    },
+    footer: {
+      madeBy: "Made by Matan Yechiel © 2020"
     }
   },
   details: {

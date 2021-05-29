@@ -29,3 +29,12 @@ export const NO_IMAGE_URL = "https://upload.wikimedia.org/wikipedia/commons/thum
 export const IP_CONFIGS = {
   baseURL: "https://json.geoiplookup.io"
 }
+
+// internal links
+export const INTERNAL_LINKS = {
+  facebookLink: "https://github.com/matany90",
+  linkedinLink: "https://github.com/matany90",
+  githubLink: "https://github.com/matany90",
+  cvLink: "https://github.com/matany90",
+  mailLink: "https://github.com/matany90"
+}

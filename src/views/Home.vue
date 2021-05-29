@@ -54,6 +54,10 @@
       @on-next-page="onNextPage"
       @on-prev-page="onPrevPage"
     />
+
+    <!-- Footer -->
+    <matan-footer class="w-full h-full" />
+
   </div>
 </template>
 
