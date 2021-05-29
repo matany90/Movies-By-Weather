@@ -12,6 +12,7 @@ https://matan-movies-webapp.firebaseapp.com
 
 Technologies I used:
 - Vue.js
+- Tailwind CSS (Includes responsiveness for different screen sizes)
 - Third-party API's (OMDB API, GeoIP API, Openweather API)
 
 ### OMDB API
