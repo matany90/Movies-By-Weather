@@ -5,7 +5,7 @@
   <img src="https://image.flaticon.com/icons/png/512/3439/3439699.png" width="200">
 </p>
 
-## In Matan's World you can search for movies and series, get information about them and even watch the weather forecast in your area.
+In Matan's World you can search for movies and series, get information about them and even watch the weather forecast in your area.
 
 Deployment link:
 https://matan-movies-webapp.firebaseapp.com
