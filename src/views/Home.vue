@@ -112,7 +112,7 @@ export default {
     async collectRandomMovies(numberOfMovies) {
       // generate random search keys
       const firstRandomKey = this.pickRandomKey()
-      const secondRandomKey = this.pickRandomKey()
+      const secondRandomKey = this.pickRandomKey(firstRandomKey)
 
       // pull random 10 movies from 2021
       const mvPr = obdbClient.search(
@@ -189,8 +189,14 @@ export default {
      * pick random key search for latest
      * movies/tvshows
      */
-    pickRandomKey() {
-      const { searchWords } = OMDB_RANDOM_SEARCH
+    pickRandomKey(removeFromList = "") {
+      let { searchWords } = OMDB_RANDOM_SEARCH
+
+      // remove key if provided
+      if (removeFromList) {
+        searchWords = searchWords.filter(word => word !== removeFromList)
+      }
+
       return searchWords[Math.floor(Math.random() * searchWords.length)]
     }
   }

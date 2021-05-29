@@ -19,7 +19,7 @@ export const OMDB_RANDOM_SEARCH = {
   year: "2021",
   series: "series",
   movie: "movie",
-  searchWords: ["family", "man", "true", "friends", "women", "game"]
+  searchWords: ["man", "true", "friends", "women", "game"]
 }
 
 // no image url
