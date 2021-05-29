@@ -1,21 +1,31 @@
 <template>
   <!-- Header container -->
-  <header class="text-gray-100 bg-m-bg body-font shadow w-full">
+  <header class="matan-header text-gray-100 bg-m-bg body-font shadow w-full">
       <div class="flex flex-wrap p-5 flex-col md:flex-row items-center">
         <!-- Header Left -->
         <div class="w-full flex flex-row">
-          <div class="w-1/2">
+
+          <!-- App logo -->
+          <div class="w-1/2 cursor-pointer flex flex-row" @click="$router.push('/')">
             <img src="@/assets/images/matan-logo.png" class="w-14" />
+            <div class="matan-header--logo-title flex items-center ml-2 md:flex hidden">{{ $t("headers.logo.title") }}</div>
           </div>
+
           <!-- Header Right -->
           <div class="w-1/2 flex justify-end">
-            <!-- City and temperature -->
-            <div class="text-gray-300 flex items-center text-sm mt-2">
-              <span>{{ weatherInfo.city }}, {{ weatherInfo.temp }} °C</span>
-            </div>
 
-            <!-- Weather icon -->
-            <img :src="weatherInfo.icon" class="w-14" />
+            <div v-if="!weatherInfo.icon">
+              <m-loading />
+            </div>
+            <!-- City and temperature -->
+            <div v-else class="flex flex-row">
+              <div class="text-gray-300 flex items-center text-sm mt-2">
+                <span class="md:text-lg text-sm font-bold">{{ weatherInfo.city }}, {{ weatherInfo.temp }} °C</span>
+              </div>
+
+              <!-- Weather icon -->
+              <img :src="weatherInfo.icon" class="w-14" />
+            </div>
           </div>
         </div>
       </div>
@@ -156,3 +166,14 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+@import "../../style/_main.scss";
+
+.matan-header {
+  &--logo-title {
+    font-family: $title-font-family;
+    font-weight: $title-font-weight
+  }
+}
+</style>

@@ -27,5 +27,10 @@ export const en = {
   },
   general: {
     noDescription: "No Description Provided"
+  },
+  headers: {
+    logo: {
+      title: "Your Movie Guide"
+    }
   }
 }
