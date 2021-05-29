@@ -53,7 +53,6 @@
       @on-next-page="onNextPage"
       @on-prev-page="onPrevPage"
     />
-
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <!-- Header container -->
-  <header class="matan-header text-gray-100 bg-m-bg body-font shadow w-full">
+  <header class="matan-header text-gray-100 bg-m-bg body-font shadow w-full relative">
       <div class="flex flex-wrap p-5 flex-col md:flex-row items-center">
         <!-- Header Left -->
         <div class="w-full flex flex-row">
@@ -12,7 +12,10 @@
           </div>
 
           <!-- Header Right -->
-          <div class="w-1/2 flex justify-end">
+          <div
+            class="w-1/2 flex justify-end cursor-pointer"
+            @click="isForecastVisible = true"
+          >
 
             <div v-if="!weatherInfo.icon">
               <m-loading />
@@ -29,6 +32,17 @@
           </div>
         </div>
       </div>
+
+      <!-- Weather forecast -->
+      <transition name="fade">
+        <matan-forecast
+          v-if="isForecastVisible"
+          :currentWeather="weatherInfo"
+          class="absolute"
+          style="top: 80%; right: 0%;"
+          @on-close-forecast="isForecastVisible = false"
+        />
+      </transition>
   </header>
 </template>
 
@@ -48,7 +62,11 @@ export default {
   // local state
   data() {
     return {
-      weather: {}
+      // weather object
+      weather: {},
+
+      // isForecast visible
+      isForecastVisible: false
     }
   },
 
@@ -84,11 +102,13 @@ export default {
         const [weather = {}] = this.weather.weather
 
         // return info
+        console.log("this.weather:", this.weather)
         return {
           icon: `${OPEN_WEATHER_CONFIGS.iconBaseURL}/${weather.icon}.png`,
           description: weather.description,
           city: this.weather.name || "",
-          temp: this.weather.main.temp
+          temp: Math.floor(this.weather.main.temp),
+          realFeel: Math.floor(this.weather.main.feels_like)
         }
       }
 
@@ -162,6 +182,13 @@ export default {
         console.error(e)
         throw new Error("unable to generate weather object.")
       }
+    },
+
+    /**
+     * onTempHover toggle forecast visible
+     */
+    onTempHover() {
+      this.isForecastVisible = true
     }
   }
 }
@@ -175,5 +202,14 @@ export default {
     font-family: $title-font-family;
     font-weight: $title-font-weight
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
