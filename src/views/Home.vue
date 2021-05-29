@@ -111,6 +111,16 @@ export default {
     this.randomMovies = await this.collectRandomMovies(10)
   },
 
+  // handle notification
+  notifications: {
+    notifyError: {
+      type: "error"
+    },
+    notifyWarn: {
+      type: "warn"
+    }
+  },
+
     // methods
   methods: {
     /**
@@ -153,25 +163,45 @@ export default {
      * onSearchClick emits search to omdb API
      */
     async onSearchClick(shouldScroll = false) {
-      // set loader
-      this.loading = true
+      try {
+        // set loader
+        this.loading = true
 
-      // make api search
-      const { data } = await obdbClient.search(
-        {
-          s: this.search.input,
-          type: this.search.select.value,
-          page: this.search.page
+        // make api search
+        const { data } = await obdbClient.search(
+          {
+            s: this.search.input,
+            type: this.search.select.value,
+            page: this.search.page
+          }
+        )
+
+        // throw warning if search
+        // didnt execute properly
+        if (data.Response === "False") {
+          this.notifyWarn({
+            title: this.$t("errors.unableToSearch"),
+            message: data.Error,
+          })
         }
-      )
 
-      // set movies data
-      if (shouldScroll) {
-        this.$scrollTo("#home-list")
+        // scroll to movies list
+        if (shouldScroll) {
+          this.$scrollTo("#home-list")
+        }
+
+        // set movies data
+        this.searchMovies = data.Search
+        this.totalSearchResults = Number(data.totalResults)
+      } catch(e) {
+        console.error(e)
+        this.notifyError({
+          title: this.$t("errors.unableToSearch"),
+          message: e.message
+        })
       }
 
-      this.searchMovies = data.Search
-      this.totalSearchResults = Number(data.totalResults)
+      // set loader flag to false
       this.loading = false
     },
 

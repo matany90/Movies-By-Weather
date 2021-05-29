@@ -37,5 +37,8 @@ export const en = {
     logo: {
       title: "Your Movie Guide"
     }
+  },
+  errors: {
+    unableToSearch: "unable to execute search."
   }
 }

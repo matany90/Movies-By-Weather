@@ -10,7 +10,7 @@ import { translations } from "./locales"
 import components from "./plugins/components"
 
 import "./assets/css/tailwind.css"
-import "./assets/tailwind.css"
+import "@/plugins/notification"
 
 // install internal plugins
 Vue.use(common)
