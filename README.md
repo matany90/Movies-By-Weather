@@ -8,7 +8,7 @@
 In Matan's World you can search for movies and series and get information about them. <br />
 In addition, you can also watch weather forecast in your area.
 
-Deployment link:
+Deployed to Firebase Hosting:
 https://matan-movies-webapp.firebaseapp.com
 
 Technologies I used:
