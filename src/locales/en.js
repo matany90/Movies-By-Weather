@@ -20,7 +20,7 @@ export const en = {
       moreInfo: "More Info"
     },
     footer: {
-      madeBy: "Made by Matan Yechiel © 2020"
+      madeBy: "Made by Matan Yechiel © 2021"
     }
   },
   details: {
