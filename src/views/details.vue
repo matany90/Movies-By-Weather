@@ -87,7 +87,6 @@ export default {
   // mounted hook
   async mounted() {
     this.movie = await this.getMovieDetails()
-    console.log(this.movie)
   },
 
   // methods
