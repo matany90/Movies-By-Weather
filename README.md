@@ -1,7 +1,7 @@
 # Welcome to Matan's Movies World
 
 <p float="left">
-  <img src="https://imgur.com/tQSs7kp.png" width="600">
+  <img src="https://imgur.com/tQSs7kp.png" width="150">
   <img src="https://imgur.com/Io9QY36.png" width="600">
 </p>
 
