@@ -51,7 +51,7 @@ npm run serve
 
 ![alt text](https://imgur.com/lNEML3l.png)
 
-![alt text](https://i.ibb.co/ThJN7qq/Screen-Shot-2021-05-29-at-20-28-33.png)
+![alt text](https://i.ibb.co/yqC3Gpn/Screen-Shot-2021-05-29-at-20-33-03.png)
 
 
 
