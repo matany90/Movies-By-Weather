@@ -21,9 +21,11 @@ export const en = {
     }
   },
   details: {
-    rating: "Rating",
-    actors: "Actors",
-    genre: "Genre"
+    rating: "Rating:",
+    actors: "Actors:",
+    genre: "Genre:",
+    language: "Language:",
+    country: "Country:"
   },
   general: {
     noDescription: "No Description Provided"

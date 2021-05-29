@@ -31,28 +31,13 @@
 
       <!-- Additinal Info -->
       <div>
-        <!-- Genre -->
-        <div v-if="movie.Genre" class="mt-5">
-          <span class="text-sm text-gray-600 font-extrabold">
-            {{ $t("details.genre") }}
-          </span>
-          <span class="text-sm font-extrabold">{{ movie.Genre }}</span>
-        </div>
-
-        <!-- Rating -->
-        <div v-if="movie.imdbRating" class="mt-5">
-          <span class="text-sm text-gray-600 font-extrabold">
-            {{ $t("details.rating") }}
-          </span>
-          <span class="text-sm font-extrabold">{{ movie.imdbRating }}</span>
-        </div>
-
-        <!-- Actors -->
-        <div v-if="movie.Actors" class="mt-5 mb-5">
-          <span class="text-sm text-gray-600 font-extrabold">
-            {{ $t("details.actors") }}
-          </span>
-          <span class="text-sm font-extrabold">{{ movie.Actors }}</span>
+        <div v-for="(key, i) in Object.keys(movieAdditionalInfo)" :key="i" class="md:mb-10 mb-6">
+          <div v-if="movieAdditionalInfo[key]" class="mt-5">
+            <span class="text-sm text-gray-600 font-extrabold">
+              {{ $t(`details.${key}`) }}
+            </span>
+            <span class="md:text-base text-sm font-extrabold ml-3">{{ movieAdditionalInfo[key] }}</span>
+          </div>
         </div>
       </div>
 
@@ -87,6 +72,7 @@ export default {
   // mounted hook
   async mounted() {
     this.movie = await this.getMovieDetails()
+    console.log(this.movie)
   },
 
   // methods
@@ -122,6 +108,20 @@ export default {
      */
     movieDescription() {
       return this.movie.Plot !== "N/A" ? this.movie.Plot : this.$t("general.noDescription")
+    },
+
+    /**
+     * movieAdditionalInfo returns the relevant
+     * additional info of user
+     */
+    movieAdditionalInfo() {
+      return {
+        genre: this.movie.Genre,
+        language: this.movie.Language,
+        rating: this.movie.imdbRating,
+        actors: this.movie.Actors,
+        country: this.movie.Country
+      }
     }
   }
 }
