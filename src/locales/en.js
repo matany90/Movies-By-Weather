@@ -10,7 +10,7 @@ export const en = {
     },
     random: {
       title: "Latest Movies and Tv Shows of 2021",
-      info: "Here is a collection of ten recommended movies and TV shows from 2021. <br /> To search for specific movies or TV shows, click on the appropriate section in the top toolbar."
+      info: "Here is a collection of ten recommended movies and TV shows from 2021. <br /> To search for specific movies or TV shows, you can search in the top search bar."
     },
     search: {
       title: "It's your time to enjoy!",
