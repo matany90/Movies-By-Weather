@@ -32,9 +32,9 @@ export const IP_CONFIGS = {
 
 // internal links
 export const INTERNAL_LINKS = {
-  facebookLink: "https://github.com/matany90",
-  linkedinLink: "https://github.com/matany90",
+  facebookLink: "https://www.facebook.com/matan.yechiel",
+  linkedinLink: "https://www.linkedin.com/in/matan-yechiel-62117818b/",
   githubLink: "https://github.com/matany90",
-  cvLink: "https://github.com/matany90",
-  mailLink: "https://github.com/matany90"
+  cvLink: "https://drive.google.com/file/d/1L8DsfEDRMGSQ0ls85k53aC330oKooJtb/view?usp=sharing",
+  mailLink: "mailto:matany90@gmail.com"
 }
