@@ -1,6 +1,6 @@
 <template>
   <!-- Details container -->
-  <div v-if="Object.keys(movie || {}).length" class="matan-details md:container md:mx-auto flex md:flex-row flex-col mt-10">
+  <div v-if="Object.keys(movie || {}).length" class="matan-details md:container md:mx-auto flex md:flex-row flex-col mt-10 h-screen">
 
     <!-- Image -->
     <div class="md:w-1/3 md:p-0 p-3">

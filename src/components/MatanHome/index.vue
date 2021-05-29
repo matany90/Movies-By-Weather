@@ -3,7 +3,7 @@
     <!-- Random/Search movies -->
     <div class="matan-home-elements">
       <!-- Title -->
-      <div class="matan-home-elements--title text-center text-4xl md:mt-20 mt-10 ml-10 mr-10">
+      <div class="matan-home-elements--title text-center text-4xl mt-10 ml-10 mr-10">
         {{ $t(`home.${this.moviesKey}.title`) }}
       </div>
 
