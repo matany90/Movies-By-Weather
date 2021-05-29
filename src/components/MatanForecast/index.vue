@@ -10,7 +10,7 @@
       <!-- Current weather -->
       <div class="flex flex-row p-10">
         <div>
-          <img :src="currentWeather.icon" class="w-20" />
+          <img :src="currentWeather.icon" style="width: 5rem; height: 5rem;" />
           <p class="text-center text-gray-500 mt-2 text-sm capitalize">{{ currentWeather.description }}</p>
         </div>
 

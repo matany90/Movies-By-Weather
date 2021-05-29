@@ -5,7 +5,11 @@
 
       <!-- image mobile container -->
       <div class="flex justify-center">
-        <img src="@/assets/images/popcorn.svg" class="w-32 mb-6 mt-5" />
+        <img
+          src="@/assets/images/popcorn.svg"
+          style="width: 6rem; height: 6rem;"
+          class="mb-6 mt-5"
+        />
       </div>
 
       <!-- search bar mobile -->

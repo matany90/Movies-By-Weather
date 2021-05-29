@@ -5,7 +5,7 @@
       <div class="w-full cursor-pointer flex flex-col justify-center mb-5">
         <!-- image -->
         <div class="flex justify-center">
-          <img src="@/assets/images/matan-logo.png" class="w-28" />
+          <img src="@/assets/images/matan-logo.png" style="width: 6rem; height: 6rem;" />
         </div>
 
         <!-- title -->

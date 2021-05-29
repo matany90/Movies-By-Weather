@@ -2,12 +2,12 @@
   <!-- Header container -->
   <header class="matan-header text-gray-100 bg-m-bg body-font shadow w-full relative">
       <div class="flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <!-- Header Left -->
         <div class="w-full flex flex-row">
 
-          <!-- App logo -->
+          <!-- Header Left -->
           <div class="w-1/2 cursor-pointer flex flex-row" @click="$router.push('/')">
-            <img src="@/assets/images/matan-logo.png" class="w-14" />
+            <!-- App logo -->
+            <img src="@/assets/images/matan-logo.png" style="width: 4rem; height: 4rem;" />
             <div class="matan-header--logo-title flex items-center ml-2 md:flex hidden">{{ $t("headers.logo.title") }}</div>
           </div>
 
@@ -27,7 +27,7 @@
               </div>
 
               <!-- Weather icon -->
-              <img :src="weatherInfo.icon" class="w-14" />
+              <img :src="weatherInfo.icon" style="width: 4rem; height: 4rem;" />
             </div>
           </div>
         </div>
