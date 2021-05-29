@@ -49,7 +49,7 @@ npm run serve
 
 ![alt text](https://i.ibb.co/93qyhsf/Screen-Shot-2021-05-29-at-20-23-46.png)
 
-![alt text](https://imgur.com/lNEML3l.png)
+![alt text](https://i.ibb.co/2sq4c8z/Screen-Shot-2021-05-29-at-20-32-33.png)
 
 ![alt text](https://i.ibb.co/yqC3Gpn/Screen-Shot-2021-05-29-at-20-33-03.png)
 
