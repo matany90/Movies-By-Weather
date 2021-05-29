@@ -197,10 +197,9 @@ export default {
 @import "../style/_main.scss";
 
 .background-logo {
-  background-image: url("../assets/images/latest-movies-2.jpg");
+  background-image: url("../assets/images/latest-movies.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  border-radius: 2%;
 
   font-family: $title-font-family;
   font-weight: 500;
