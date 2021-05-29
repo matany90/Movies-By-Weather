@@ -42,17 +42,14 @@ npm install
 npm run serve
 ```
 
-### Join Chat Screen:
-![alt text](https://imgur.com/1bcg7CR.png)
+## App Screenshots
+![alt text](https://imgur.com/eEDc1Yr.png)
 
-### Chat screen 1:
-![alt text](https://imgur.com/hBy8NY7.png)
+![alt text](https://imgur.com/18SjgWN.png)
 
-### Chat screen 2:
 ![alt text](https://imgur.com/HQlfjAt.png)
 
-### Chat screen 3:
-![alt text](https://imgur.com/n7hGFAi.png)
+![alt text](https://imgur.com/lNEML3l.png)
 
 
 
