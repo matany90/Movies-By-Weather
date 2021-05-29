@@ -20,7 +20,7 @@ Provides information about user's location through his IP address.
 ### Openweather API
 Provides information about Weather by City
 
-#### Usage
+## Usage
 To run the project locally, please run:
 
 ```shell
