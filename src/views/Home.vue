@@ -65,6 +65,8 @@ import { OMDB_RANDOM_SEARCH } from "../configs"
 const obdbClient = initObdbAPI()
 
 export default {
+  name: "home",
+
   // local state
   data() {
     return {

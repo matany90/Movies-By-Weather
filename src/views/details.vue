@@ -1,6 +1,6 @@
 <template>
   <!-- Details container -->
-  <div class="matan-details md:container md:mx-auto flex md:flex-row flex-col mt-10">
+  <div v-if="Object.keys(movie || {}).length" class="matan-details md:container md:mx-auto flex md:flex-row flex-col mt-10">
 
     <!-- Image -->
     <div class="md:w-1/3 md:p-0 p-3">
@@ -46,6 +46,9 @@
         <div class="mt-5 matan-details--plot">{{ movieDescription }}</div>
       </div>
     </div>
+  </div>
+  <div v-else class="flex justify-center mt-20">
+    <m-loading size="large" />
   </div>
 </template>
 
